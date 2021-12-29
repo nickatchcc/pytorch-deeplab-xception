@@ -15,7 +15,8 @@ class VOCSegmentation(Dataset):
 
     def __init__(self,
                  args,
-                 base_dir=Path.db_root_dir('pascal'),
+                 base_dir='/content/pytorch-deeplab-xception/datasets/VOCdevkit/VOC2007/',
+                 #base_dir=Path.db_root_dir('pascal'),
                  split='train',
                  ):
         """
