@@ -14,6 +14,8 @@ from utils.saver import Saver
 from utils.summaries import TensorboardSummary
 from utils.metrics import Evaluator
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 class Trainer(object):
     def __init__(self, args):
         self.args = args
@@ -65,7 +67,7 @@ class Trainer(object):
 
         # Using cuda
         if args.cuda:
-            self.model = torch.nn.DataParallel(self.model, device_ids=self.args.gpu_ids)
+            self.model = torch.nn.DataParallel(self.model, device_ids=[0])
             patch_replication_callback(self.model)
             self.model = self.model.cuda()
 
