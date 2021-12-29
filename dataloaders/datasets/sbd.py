@@ -15,7 +15,8 @@ class SBDSegmentation(data.Dataset):
 
     def __init__(self,
                  args,
-                 base_dir=Path.db_root_dir('sbd'),
+                 #base_dir=Path.db_root_dir('sbd'),
+                 base_dir='/content/pytorch-deeplab-xception/datasets/VOCdevkit/VOC2007/benchmark_RELEASE',                 
                  split='train',
                  ):
         """
